@@ -240,7 +240,15 @@ const getMovieById = (id) => {
 
 }
 
+const movieTitle = movie.title_long;
 
+const slug = movieTitle.toLowerCase().replace(/[^\w\s-]/g, '').replace(/[\s]+/g, '-');
+
+const movieLink = document.createElement('a');
+
+movieLink.href = `https://example.com/movies/${slug}`;
+
+movieLink.textContent = movieTitle;
 
 
 
